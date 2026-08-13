@@ -16,6 +16,29 @@ modeling, statistical inference), Data Engineer (pipeline and
 infrastructure), and ML Engineer (productionizing models). In
 practice these boundaries blur significantly at smaller companies.
 
+### Core qualities of a good Data Scientist
+The course identifies four traits as central to the role: curiosity,
+critical thinking, the ability to take and defend a position, and
+storytelling. Soft skills are treated as essential, not secondary —
+a data scientist who cannot argue for a conclusion or communicate it
+as a coherent narrative fails to deliver value regardless of model
+accuracy. This reframes technical output as a means, not an end:
+analysis only matters once it converts into a decision someone else
+can act on.
+
+### Approach to a new project
+Before touching any data or model, the recommended sequence is:
+1. Clearly delimit the problem the organization wants to solve.
+2. Determine what data is needed to solve that problem.
+3. Determine where that data can be obtained.
+
+This mirrors a discipline I already practice in physical modeling:
+define the problem and its boundary conditions before selecting a
+method. Jumping straight to tools before framing the question is a
+common failure mode in both fields — and arguably worse in data
+science, where the abundance of available data makes it easy to
+start analyzing before the problem is even well posed.
+
 ## Personal reflections — career path analysis
 
 Given my background in Physics Engineering (numerical simulation,
