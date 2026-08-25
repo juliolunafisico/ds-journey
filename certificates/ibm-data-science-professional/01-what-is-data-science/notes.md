@@ -39,6 +39,56 @@ common failure mode in both fields — and arguably worse in data
 science, where the abundance of available data makes it easy to
 start analyzing before the problem is even well posed.
 
+### Structuring an analytical report
+Report length should match purpose, not arbitrary preference: a
+short report (under 5 pages) works for commentary on current
+trends; a long, detailed report builds an argument incrementally,
+with full methodology, literature review, and intermediate findings.
+
+**Minimum structure, even for short reports:**
+1. Cover page — title, authors, affiliation, contact, and
+   **publication date** (frequently missing in practice, which
+   makes proper citation impossible).
+2. Table of contents (mandatory once the document exceeds ~5 pages).
+3. Executive summary — the core argument in three paragraphs or
+   fewer, regardless of document length.
+4. Introduction — frames the problem for an unfamiliar reader.
+5. Literature review — length scales with how contested the topic
+   is; brief if consensus exists, extensive if nuanced, since its
+   job is to expose the knowledge gap the analysis will fill.
+6. Methodology — data sources and methods, justified by reference
+   back to the literature review.
+7. Results — empirical findings only, from descriptive statistics
+   to formal hypothesis testing. Interpretation is deliberately
+   withheld here.
+8. Discussion — where narrative enters: results are tied back to
+   the original research question, framed as the missing piece of
+   the puzzle. Not every analysis is conclusive, and caveats belong
+   here, honestly stated.
+9. Conclusion — generalizes findings and frames them for impact,
+   without getting stuck on caveats already disclosed. Can point to
+   future research directions.
+10. References, acknowledgments, appendices.
+
+**Key distinction worth internalizing**: Results presents facts;
+Discussion presents interpretation. Conflating the two weakens
+credibility — the reader can no longer tell raw finding from
+argument built on it. Direct parallel to keeping experimental data
+separate from theoretical interpretation in a physics report:
+mixing the two invites confirmation bias.
+
+**Self-check before submitting analysis** (adapted from a *Transport
+Policy* author checklist, reproduced in the reading): Does the
+reader know upfront what they gain from reading this? Is the
+objective clear? Is the contribution's importance explained? Is the
+work placed in proper context with sufficient references? Is
+feasibility/usefulness addressed? Are future developments
+identified? Is the structure clear and logical?
+
+This is the operational version of the storytelling/argumentation
+qualities already noted above — narrative structure isn't
+decoration, it's close to a publication-readiness criterion.
+
 ### Big Data: definition and characteristics
 Big Data is not simply "a lot of data" — it is a regime where
 conventional tools (single-server relational databases, spreadsheet
