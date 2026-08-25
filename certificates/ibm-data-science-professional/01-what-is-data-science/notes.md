@@ -26,6 +26,56 @@ accuracy. This reframes technical output as a means, not an end:
 analysis only matters once it converts into a decision someone else
 can act on.
 
+### Data Science roadmap — course infographic synthesis
+Consolidating the certificate's own summary infographic against what
+these notes already cover, to avoid duplication and flag genuinely
+new material.
+
+**Personality characteristics**: mostly already covered above
+(curiosity, argumentation, storytelling). Two additions worth
+noting: familiarity with analytics platforms is treated as a
+baseline expectation, not a differentiator — and "know your area of
+interest" (e.g. healthcare, IT) suggests domain specialization
+matters as much as technical breadth. Given my own trajectory, the
+domain is physics/engineering simulation rather than a business
+vertical — worth keeping in mind when the certificate's examples
+skew toward business analytics.
+
+**Many paths**: data science draws from diverse educational
+backgrounds — people typically arrive via exposure to a real data
+challenge in their own field, not through a single canonical
+pipeline. Directly relevant to my own transition narrative: the
+entry point matters less than demonstrated capability.
+
+**Data literacy**: beyond what's covered above (Big Data, Cloud),
+the infographic adds structured vs. unstructured data analysis,
+file format literacy, and database/SQL skills as baseline
+requirements — not yet covered in these notes; will be built out
+properly in Course 6 (Databases and SQL for Data Science).
+
+**Tools & techniques (forward preview)**: Python and R as primary
+languages; Hadoop (see the earlier note on its declining relevance
+in 2026 — the infographic still lists it as current); core Python
+libraries NumPy, pandas, scikit-learn; data visualization tools;
+machine learning algorithms; data preprocessing techniques. This is
+essentially a preview of Courses 4, 7, 8, and 9 — no need to detail
+further here, just useful to see the full arc up front.
+
+**Foundational skills**: statistics, calculus, and linear algebra
+are listed as prerequisites — already solid from my physics
+background, so these will be a review rather than new material when
+they resurface. Exploratory data analysis and model
+selection/training/testing are the genuinely new technical skills
+ahead (Course 7 onward).
+
+**Range of tasks**: concrete outputs a data scientist is expected to
+produce — recommendation engines, predictive modeling, pattern
+identification, incorporating external data sources, and
+communicating findings. Useful as a checklist against my eventual
+portfolio projects: a strong portfolio should touch at least
+predictive modeling, pattern identification, and communication of
+findings explicitly, not just model accuracy metrics.
+
 ### Approach to a new project
 Before touching any data or model, the recommended sequence is:
 1. Clearly delimit the problem the organization wants to solve.
