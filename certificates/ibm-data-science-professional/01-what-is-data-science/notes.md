@@ -201,6 +201,56 @@ as the specific tooling has shifted heavily toward Spark and
 cloud-native lakehouse architectures. Practical focus should
 prioritize Spark.
 
+### Metadata and metadata management
+Metadata is data that describes other data. In the context of data
+warehouses and BI systems, it splits into three types:
+
+- **Technical metadata**: defines data structures from a technical
+  standpoint — table names, row/column counts, data catalogs (which
+  database holds which column, and its data type). In relational
+  databases, this typically lives in the **system catalog**.
+- **Process metadata**: describes what's happening behind the
+  scenes in enterprise systems — process start/end times, disk
+  usage, data source/destination, concurrent user counts. Primarily
+  used for troubleshooting and workflow optimization, not for
+  understanding the data itself.
+- **Business metadata**: human-readable context for business users
+  doing data discovery — how data was obtained, what it measures,
+  how it connects to other data sources. Functions as documentation
+  for the entire warehouse system.
+
+**Metadata management** is the set of policies and processes
+ensuring data access, integration across sources, and proper
+sharing across an organization. Its central artifact is the **data
+catalog** — a searchable inventory (usually with a web UI) that lets
+both engineers and business users find key attributes without
+needing to know the underlying schema by heart.
+
+**Why it matters**: well-managed metadata directly improves data
+**discovery**, **repeatability**, and **governance**. It underpins
+**data lineage** — tracing where data originated and how it was
+transformed — which is what makes root-cause tracing of data errors
+possible. This connects to **data governance**: the organizational
+capacity to ensure data quality, availability, and security across
+its full lifecycle, including accountability for the effects of
+poor data quality.
+
+**Tools (recognition-level only)**: IBM's own stack includes
+InfoSphere Information Server and Watson Knowledge Catalog — worth
+recognizing given this is an IBM certificate. Broader industry
+players include Informatica Enterprise Data Catalog, Alation, and
+Microsoft Azure Data Catalog. No need to know these deeply at this
+stage — just recognize the category (data cataloging/governance
+tools) if it comes up in an interview or job posting.
+
+**Relevance to my track**: this reading is more about enterprise
+data governance than hands-on technical skill — lower priority for
+a scientific/computational data science path than for someone
+headed toward a Data Engineer or BI-focused role. Still worth
+knowing the vocabulary (data lineage, data catalog, governance)
+since it appears in job postings and cross-functional conversations,
+even if I won't be implementing a metadata management system myself.
+
 ### Cloud Computing
 Delivery of on-demand computing resources over the Internet on a
 pay-for-use basis. The shift is economic as much as technical
