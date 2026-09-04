@@ -139,6 +139,84 @@ This is the operational version of the storytelling/argumentation
 qualities already noted above — narrative structure isn't
 decoration, it's close to a publication-readiness criterion.
 
+### Web scraping
+Automated extraction of data from web pages, as an alternative to
+manual copying. A script (typically Python) sends an HTTP request
+to a URL, parses the returned HTML into a navigable tree structure,
+and extracts specific elements (tables, text, links) into a usable
+format (CSV, JSON, database).
+
+**Core workflow**: request → parse → extract → store.
+
+**Key Python tools**:
+- `requests` — sends the HTTP request, downloads raw HTML.
+- `BeautifulSoup` — parses HTML, makes navigating/searching elements
+  straightforward.
+- `Scrapy` — full framework for large-scale scraping across many
+  pages/sites.
+- `Selenium` — simulates a real browser; needed when content is
+  loaded dynamically via JavaScript, which `requests` alone cannot
+  see.
+
+**Important distinction**: web scraping is not the same as using an
+API. When a public API exists (Twitter/X, Reddit, financial
+services), it's always preferable — more stable (HTML structure
+changes without notice and breaks scrapers), faster, and generally
+compliant with terms of service by design. Scraping is the fallback
+when no adequate API exists.
+
+**Legal/ethical considerations** (non-trivial, not just a technical
+footnote): check a site's `robots.txt` before scraping, review
+Terms of Service (some explicitly prohibit scraping), and avoid
+overloading servers with unthrottled requests. This is an area
+where legal precedent varies by jurisdiction and lags behind the
+technology — "technically possible" does not imply "legally safe."
+
+### Types of data repositories
+Three broad categories, differing in purpose, scale, and structure
+rigidity — directly relevant groundwork for Course 6 (Databases and
+SQL for Data Science).
+
+**Databases** — built for day-to-day operational data (transactions,
+frequent reads/writes):
+- *Relational (SQL)*: fixed schema, tables related via primary/
+  foreign keys. Examples: PostgreSQL, MySQL, IBM Db2. Enforces
+  consistency (referential integrity) at the cost of flexibility.
+- *Non-relational (NoSQL)*: schema-flexible. Sub-types: document
+  (MongoDB), key-value (Redis), columnar (Cassandra), graph (Neo4j)
+  — each optimized for a different access pattern rather than being
+  a general-purpose replacement for SQL.
+
+**Data Warehouses** — centralized repositories for historical
+analysis and reporting, not real-time transactions. Populated via
+**ETL** (Extract, Transform, Load): extract from multiple
+operational sources, transform/clean into a consistent format
+(connects directly to the data preprocessing/transformation steps
+already covered in the Data Mining process notes above), then load
+into a query-optimized schema. Examples: Snowflake, BigQuery, IBM
+Db2 Warehouse. Note: many modern architectures now favor **ELT**
+(load raw data first, transform on demand) given cheap cloud
+storage — worth recognizing both terms.
+
+**Big Data Stores** — designed for volumes beyond what traditional
+databases or warehouses handle efficiently (see Big Data section
+above). Includes HDFS and the modern "lakehouse" pattern (object
+storage + open table format + query engine) already noted earlier.
+Related concept not yet covered: **Data Lake** — stores raw,
+unstructured/semi-structured data with schema defined at query time
+(schema-on-read), versus a Data Warehouse's schema-on-write and
+pre-structured data. Data lakes are cheaper per GB and suited to
+exploratory/ML use cases; warehouses are pricier but optimized for
+well-defined, recurring queries.
+
+**Summary comparison**:
+
+| Repository | Main purpose | Typical scale | Example |
+|---|---|---|---|
+| Database (SQL/NoSQL) | Day-to-day transactions | GB–TB | PostgreSQL, MongoDB |
+| Data Warehouse | Structured historical analysis | TB–PB | Snowflake, BigQuery |
+| Big Data Store | Massive raw/varied storage | PB+ | HDFS, S3-based data lakes |
+
 ### Big Data: definition and characteristics
 Big Data is not simply "a lot of data" — it is a regime where
 conventional tools (single-server relational databases, spreadsheet
