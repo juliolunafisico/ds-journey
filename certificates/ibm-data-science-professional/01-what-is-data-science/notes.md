@@ -182,10 +182,42 @@ frequent reads/writes):
 - *Relational (SQL)*: fixed schema, tables related via primary/
   foreign keys. Examples: PostgreSQL, MySQL, IBM Db2. Enforces
   consistency (referential integrity) at the cost of flexibility.
-- *Non-relational (NoSQL)*: schema-flexible. Sub-types: document
-  (MongoDB), key-value (Redis), columnar (Cassandra), graph (Neo4j)
-  — each optimized for a different access pattern rather than being
-  a general-purpose replacement for SQL.
+- *Non-relational (NoSQL)*: schema-flexible, trading strict
+  consistency guarantees for flexibility and horizontal scalability.
+  Four common types, distinguished by the natural shape of the
+  queries they're built for:
+
+  - **Key-value**: opaque key-value pairs, like a distributed Python
+    dict. Extremely fast for lookup by identifier. Example: Redis.
+    Use case: session caching, shopping carts, real-time counters.
+  - **Document-based**: JSON/BSON documents with flexible, nested
+    structure — different documents in the same collection can have
+    different fields. Example: MongoDB. Use case: user profiles with
+    variable attributes, CMS content, product catalogs.
+  - **Column-based (wide-column)**: stores data column-by-column
+    instead of row-by-row, so aggregate queries over massive row
+    counts only read the relevant column — comparable to slicing a
+    single column of a NumPy array instead of iterating row by row.
+    Example: Cassandra, HBase. Use case: time-series data, high-
+    volume logging.
+  - **Graph-based**: models data explicitly as nodes and edges, with
+    relationships as first-class citizens (not implicit foreign
+    keys). Queries about connections and degrees of separation are
+    natural here and expensive in SQL (would require recursive
+    JOINs). Example: Neo4j. Use case: social networks, recommendation
+    engines, fraud detection.
+
+  | Type | Unit of data | Strength | Example |
+  |---|---|---|---|
+  | Key-value | Key-value pair | Fast lookup | Redis |
+  | Document | Nested JSON/BSON | Flexible schema | MongoDB |
+  | Column-based | Full columns | Fast aggregation at scale | Cassandra |
+  | Graph-based | Nodes + edges | Relationship queries | Neo4j |
+
+  Selection criterion in practice: match the type to how you'll
+  naturally *query* the data (by ID, by flexible content, by
+  aggregation, or by relationship), not to an abstract notion of
+  which is "best."
 
 **Data Warehouses** — centralized repositories for historical
 analysis and reporting, not real-time transactions. Populated via
