@@ -249,6 +249,51 @@ well-defined, recurring queries.
 | Data Warehouse | Structured historical analysis | TB–PB | Snowflake, BigQuery |
 | Big Data Store | Massive raw/varied storage | PB+ | HDFS, S3-based data lakes |
 
+### OLTP vs. OLAP, and refining the data repository hierarchy
+Corrections and additions from a graded quiz on this module,
+worth internalizing precisely since they were missed on first pass.
+
+**"Data repository" is a broader term than "database"**: it spans
+RDBMS and NoSQL databases, but also Data Warehouses, Data Marts,
+and Data Lakes. Treating "data repository" as synonymous with
+"database" is a category error — database is one type of
+repository, not the whole category.
+
+**Why RDBMS suits OLTP (Online Transaction Processing)**: the key
+reason is the ability to insert, update, or delete *small* amounts
+of data quickly and consistently — matching the OLTP access
+pattern of frequent, small, atomic operations (e.g. registering a
+sale, updating inventory). This is distinct from OLAP (Online
+Analytical Processing), which handles large, aggregated queries
+over historical data (e.g. total sales by region for the quarter).
+
+| | OLTP | OLAP |
+|---|---|---|
+| Purpose | Daily transactional operations | Historical analysis, reporting |
+| Query type | Small, frequent, specific | Large, aggregated, complex |
+| Example | Recording a sale | Total quarterly sales by region |
+| Typical repository | RDBMS | Data Warehouse |
+| Priority | Write speed, consistency | Read performance over large volumes |
+
+**Data Mart**: a subset of a Data Warehouse, isolated for a specific
+business function, purpose, or user community. Structured and
+filtered, unlike a Data Lake's raw, broad, unstructured scope — the
+two move in nearly opposite directions (Mart: narrow and refined;
+Lake: broad and raw).
+
+| Repository | Scope | Data state | Audience |
+|---|---|---|---|
+| Data Warehouse | Entire organization | Structured, processed | Multiple departments |
+| Data Mart | One department/function | Structured, filtered from warehouse | Specific team/community |
+| Data Lake | Entire organization | Raw, variable structure | Data scientists, exploration |
+
+**Data integration** (broader than ETL): the process of extracting,
+transforming, merging, and delivering quality data from disparate
+sources into a unified view for analytics. ETL is one common
+*mechanism* for achieving data integration, not synonymous with it
+— data virtualization (querying multiple sources without physically
+moving them) is another approach to the same goal.
+
 ### Big Data: definition and characteristics
 Big Data is not simply "a lot of data" — it is a regime where
 conventional tools (single-server relational databases, spreadsheet
