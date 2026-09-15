@@ -496,6 +496,40 @@ Decision: prioritizing path 1 as the primary 18-month target, given
 lowest preparation gap and strongest use of existing quantitative
 background.
 
+## Course closing summary
+
+Completed `sep/15/26`. This course was primarily orientational — no
+graded technical labs, but substantial conceptual groundwork for
+the rest of the certificate.
+
+**Core takeaways:**
+- The Data Scientist role is defined as much by soft skills
+  (curiosity, argumentation, storytelling) as by technical method —
+  a recurring theme worth revisiting once technical courses begin.
+- The data ecosystem has a clear hierarchy: databases (SQL/NoSQL)
+  for operational data, Data Warehouses/Marts for structured
+  historical analysis, and Data Lakes/Big Data Stores for raw data
+  at scale — each optimized for a different query pattern, not a
+  strict "better/worse" progression.
+- Course content on tooling (Hadoop, HDFS, Hive) reflects the
+  certificate's original publication era rather than the current
+  state of the field; verified independently that Spark and
+  cloud-native lakehouse architectures (Iceberg, Delta Lake) are the
+  more current focus as of 2026 — worth remembering when later
+  courses reference this stack.
+- Quiz corrections (OLTP vs. OLAP, Data Mart vs. Data Lake, data
+  integration vs. ETL) exposed the areas of imprecise
+  understanding — these distinctions are now documented in detail
+  above and worth a quick review before Course 6 (Databases and SQL).
+
+**Carried forward to later courses:**
+- CRISP-DM (Course 3) will formalize the data mining process already
+  outlined here.
+- SQL and database practice (Course 6) will apply the RDBMS/NoSQL/
+  warehouse theory documented in this course directly.
+- IBM Watson Studio (likely Course 10, Capstone) runs on the
+  Cloud service-model concepts (SaaS/PaaS) documented here.
+
 ## Resources referenced
 - IBM Data Science Professional Certificate, Course 1: "Discover
   Your Path in Data Science" (Coursera).
